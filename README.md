@@ -1,6 +1,6 @@
 # learn-socket
 
-This template should help get you started developing with Vue 3 in Vite.
+Learning socket with Vue 3 and Socket.io
 
 ## Recommended IDE Setup
 
@@ -18,6 +18,12 @@ npm install
 
 ### Compile and Hot-Reload for Development
 
+Server side:
+```sh
+node server
+```
+
+Client side:
 ```sh
 npm run dev
 ```
