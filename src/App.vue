@@ -1,21 +1,14 @@
 <script setup>
-import { Line } from 'vue-chartjs'
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
+import { pusher } from '../pusher'
 
-import { useStockStore } from "./stores/stock";
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
-
-const stockStore = useStockStore()
-
-stockStore.getStockData()
-
+pusher.subscribe('channel-name')
+pusher.bind('channel-name.test', function (data) {
+  console.log('public result', data)
+})
 </script>
 
 <template>
-  <div class="small">
-    <Line :data="stockStore.stockData" id="mychart" :options="{ borderColor: '#FFF', borderWidth: 0.5 }" />
-  </div>
+  Testing
 </template>
 
 <style scoped>
